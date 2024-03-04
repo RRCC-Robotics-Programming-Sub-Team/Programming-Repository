@@ -30,4 +30,4 @@ void Encoder::UpdatePosi(uint16_t command){
   
 }
 
-//TO-DO: create another method to interpret the byte from UpdatePos and 
+//TO-DO: create another method to interpret the byte from UpdatePosi and 
