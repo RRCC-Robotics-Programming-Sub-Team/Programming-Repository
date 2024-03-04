@@ -1,0 +1,33 @@
+#include "Encoder.h"
+#include "Arduino.h"
+#include "SPI.h"
+
+static bool initialize(false);
+
+  //Constructor for Encoder Class
+Encoder::Encoder(unsigned int pin, unsigned int ClockSpeed) {
+    //Set the pinMode for the chip select pin on the arduino for the encoder to be an output then default it to being high because the chip is active low.
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, HIGH);
+
+    //setting private values for initialization variables, common practice for cpp.
+  _pin = pin;
+  _ClockSpeed = ClockSpeed;
+}
+
+//necassary initlization method, SPI.begin() has to be called before SPI can be used so this is necassary but i need a better way of insuring it actually gets called rather than this function.
+void Encoder::Initialize() {
+  if(!initialize) {
+    initialize = true;
+    SPI.begin();
+  }
+}
+
+void Encoder::UpdatePosi(uint16_t command){
+  digitalWrite(_pin, LOW);
+  SPI.beginTransaction(SPISettings(_ClockSpeed, MSBFIRST, SPI_MODE1));
+  //TO-DO: finish this method to transfer the command to the encoder via SPI and save the send back value to a uint_16
+  
+}
+
+//TO-DO: create another method to interpret the byte from UpdatePos and 
