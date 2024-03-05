@@ -24,3 +24,18 @@ void MotorAndESC::Motor(int pwm) {
     esc.writeMicroseconds(0);
   }
 }
+
+//void MotorAndESC::Motor(int pwm) {
+  //if(pwm < 0) {
+     // Assuming `pwm` ranges from -_maxSignal to 0 for reverse,
+     // map this range to appropriate pulse widths for reverse control.
+    //esc.writeMicroseconds(map(pwm, -_maxSignal, 0, _minSignalForWork, 1500));
+  //} else if(pwm > 0) {
+     // For forward control, assuming `pwm` ranges from 0 to _maxSignal,
+     // map this range to pulse widths from the neutral point to _maxSignal.
+    //esc.writeMicroseconds(map(pwm, 0, _maxSignal, 1500, _maxSignal));
+  //} else {
+     // Use the neutral point pulse width to stop the motor.
+    //esc.writeMicroseconds(1500);
+  //}
+//}
