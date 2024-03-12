@@ -3,11 +3,11 @@
 #include "Servo.h"
 
 //constructor for MotorAndESC class
-MotorAndESC::MotorAndESC(unsigned int pin, unsigned int maxSignal, unsigned int minSignalForWork) {
+MotorAndESC::MotorAndESC(unsigned int pin, unsigned int maxSignal, unsigned int minSignalForWork)
     //setting pin for pwm signal to ESC as OUTPUT, then attaching a servo object to it;
   : _pin(pin), _maxSignal(maxSignal), _minSignalForWork(minSignalForWork) {
   pinMode(pin, OUTPUT);
-  esc.attach(pin, maxSignal, maxSignal); //(May not need Min/Max Parameters)
+  esc.attach(pin, maxSignal, maxSignal); //(May not need Min/Max Parameters. (maxSignal, maxSignal) min/max parameters is only necessary if specific pulse width boundaries are necessary for your ESC model.)
   }
   
     //Setting private variables for 
@@ -15,7 +15,6 @@ MotorAndESC::MotorAndESC(unsigned int pin, unsigned int maxSignal, unsigned int 
   //_maxSignal = maxSignal;
   //_minSignalForWork = minSignalForWork;
   //(This part is unneeded. Initializer List is in constructor's body to allow direct initialization of member variables)
-}
 
 // Updated method to apply control signal from PID output directly
 void MotorAndESC::applyControlSignal(double controlSignal) {
