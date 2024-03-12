@@ -7,12 +7,14 @@
 class MotorAndESC{
   public:
     MotorAndESC(unsigned int pin, unsigned int maxSignal, unsigned int minSignalForWork); //Constructor for MotorAndESC class, pin is pwm pin for esc, maxSignal is the max signal in microseconds the ESC will take without issues, and minSignalForWork is a value for the smallest signal in miliseconds one can send to the ESC to actually see effects from the motor.
+    void applyControlSignal(double controlSignal); // Updated method
     void Motor(int pwm);
     Servo esc;
   private:
     int _pin;
-    int _maxSignal;
-    int _minSignalForWork;
+    unsigned int _maxSignal;
+    unsigned int _minSignalForWork;
+    //unsigned for better funcionality, semantic correctness, and safety
 };
 
 #endif
