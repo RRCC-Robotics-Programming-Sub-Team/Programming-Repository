@@ -26,8 +26,17 @@ void Encoder::Initialize() {
 void Encoder::UpdatePosi(uint16_t command){
   digitalWrite(_pin, LOW);
   SPI.beginTransaction(SPISettings(_ClockSpeed, MSBFIRST, SPI_MODE1));
+  uint16_t response = SPI.transfer16(command); // Send the command and receive the response
+  digitalWrite(_pin, HIGH); // Deactivate the chip
+  SPI.endTransaction(); // End SPI transaction
+  interpretResponse(response); // Call the method to interpret the response
   //TO-DO: finish this method to transfer the command to the encoder via SPI and save the send back value to a uint_16
-  
+  //Complete
 }
 
-//TO-DO: create another method to interpret the byte from UpdatePos and 
+void Encoder::interpretResponse(uint16_t response){
+  posi = static_cast<float>(response); // Convert the response to float and store it in posi
+  // Additional conversion or interpretation logic can be added here
+}
+//TO-DO: create another method to interpret the byte from UpdatePosi and 
+//Complete

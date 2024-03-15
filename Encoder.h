@@ -10,6 +10,8 @@ class Encoder{
     void UpdatePosi(uint16_t command); //Function that reads a value from the encoder.
     void ResetPosi(); //Function to set rotation/position count back to 0;
     void Initialize(); //Function to intialize SPI protocals. Needs to be called once in setup of function, on any one of the Encoder objects;
+    void interpretResponse(uint16_t response); // Declare the new method here
+    // Other members...
     float posi = 0.0;
   private:
     int _pin; //private pin variable for class
