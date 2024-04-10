@@ -5,6 +5,6 @@
     "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
     "sketch": "Test_Moxie_Invader\\Test_Moxie_Invader.ino"
-    "output": "../build",
+    "output": "../ArduinoOutput",
 
 }
