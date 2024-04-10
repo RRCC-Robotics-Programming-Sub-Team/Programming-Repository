@@ -1,0 +1,10 @@
+{
+  "additionalFiles": "..\\..\\..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "",
+  "customBuildProperties": "build.warn_data_percentage=75",
+  "fqbn": "arduino:avr:mega:cpu=atmega2560",
+  "hardwareFolders": "C:\\Users\\dell\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\dell\\Documents\\Arduino\\libraries",
+  "sketchLocation": "C:\\Users\\dell\\Documents\\Arduino Robotics Code\\GitHub Repo Clone\\Programming-Repository\\Test_Moxie_Invader"
+}

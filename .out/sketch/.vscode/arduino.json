@@ -1,0 +1,9 @@
+#line 1 "C:\\Users\\dell\\Documents\\Arduino Robotics Code\\GitHub Repo Clone\\Programming-Repository\\Test_Moxie_Invader\\.vscode\\arduino.json"
+{
+    "debugger": "jlink",
+    "port": "COM4",
+    "configuration": "cpu=atmega2560",
+    "board": "arduino:avr:mega",
+    "sketch": "Test_Moxie_Invader.ino",
+    "output": "../ArduinoOutput"
+}
