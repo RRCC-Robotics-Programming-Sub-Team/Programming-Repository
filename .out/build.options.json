@@ -6,5 +6,5 @@
   "fqbn": "arduino:avr:mega:cpu=atmega2560",
   "hardwareFolders": "C:\\Users\\dell\\AppData\\Local\\Arduino15\\packages",
   "otherLibrariesFolders": "C:\\Users\\dell\\Documents\\Arduino\\libraries",
-  "sketchLocation": "C:\\Users\\dell\\Documents\\Arduino Robotics Code\\GitHub Repo Clone\\Programming-Repository\\Test_Moxie_Invader"
+  "sketchLocation": "C:\\Users\\dell\\Documents\\ArduinoRoboticsCode\\GitHub_Repo_Clone\\Programming-Repository\\Programming-Repository\\Test_Moxie_Invader"
 }
