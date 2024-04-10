@@ -1,6 +1,7 @@
 //TODO: recreate the PID (Proportional Integral Derivative) control class for calculating control steps.
 //finito
 #include "PIDController.h"
+#include "Arduino.h"
 //#include <iostream> //(#include <iostream> is removed; not needed for Arduino)
 
 // Constructor to initialize PID gains (kp, ki, kd), target value, integral term, and previous error

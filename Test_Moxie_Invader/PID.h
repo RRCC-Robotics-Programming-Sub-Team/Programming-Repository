@@ -6,6 +6,8 @@
 #ifndef PIDCONTROLLER_H
 #define PIDCONTROLLER_H
 
+#include "Arduino.h"
+
 class PIDController {
 public:
     PIDController(double kp, double ki, double kd, double target);
