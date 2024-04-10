@@ -1,7 +1,10 @@
 {
+    "sketch": "Test_Moxie_Invader.ino",
+    "debugger": "jlink",
     "port": "COM4",
     "configuration": "cpu=atmega2560",
     "board": "arduino:avr:mega",
     "sketch": "Test_Moxie_Invader\\Test_Moxie_Invader.ino"
-    "output": "../ArduinoOutput"
+    "output": "../ArduinoOutput",
+
 }
