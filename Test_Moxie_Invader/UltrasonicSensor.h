@@ -2,7 +2,8 @@
 #ifndef ULTRASONICSENSOR_H
 #define ULTRASONICSENSOR_H
 
-#include "C:\Users\dell\Documents\arduino-cli_0.35.3_Windows_64bit\arduino-cli\arduino-cli.exe"
+#include "Arduino.h"
+//This is path for Arduino.h file in my computer.
 class UltrasonicSensor {
 public:
     UltrasonicSensor(int triggerPin, int echoPin);
