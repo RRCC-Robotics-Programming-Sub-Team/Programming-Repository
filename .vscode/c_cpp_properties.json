@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${C:\\Users\\dell\\Documents\\arduino-cli_0.35.3_Windows_64bit}/**"
             ],
             "defines": [
                 "_DEBUG",
