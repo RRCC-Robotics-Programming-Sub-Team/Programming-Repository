@@ -5,6 +5,8 @@ This is the RRCC Space Grant: Robotics Team Repository for Arduino code implemen
 The code works with ultrasonic sensors, ESC motor controls, and a PID controller with GM3506 Gimbal Motors with encoders.
 There are separate files and folders for each script. All are with C++, C, or Arduino IDE language.
 
+HELLO!
+
 Code Documentation
 
 (/C:/Users/dell/Downloads/Space%20Grant%20Code%20Documentation.pdf)
