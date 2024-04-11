@@ -7,6 +7,7 @@
 const int MOTOR_PIN = 5; // Pin for the motor control
 const int ULTRASONIC_TRIGGER_PIN = 2; // Trigger Pin for HC-SR04
 const int ULTRASONIC_ECHO_PIN = 3; // Echo Pin for HC-SR04
+const int Encoder = 7; // Encoder Pin
 
 // PID parameters (Tune these based on your system's response)
 double Setpoint, Input, Output;
@@ -25,7 +26,7 @@ void setup() {
   Serial.begin(9600);
 
   // Setup for encoder (If your encoder setup is complex, you may need additional initialization here)
-
+  pinMode(Encoder, INPUT);
   // Initialize PID controller
   Setpoint = 20; // Example setpoint: aiming for a 20 cm distance from an obstacle
   PIDController myPID(Kp, Ki, Kd, Setpoint);
@@ -44,7 +45,7 @@ void loop() {
   motorControl.Motor(Output); // You'll need to map or scale Output to your motor's speed range if necessary
 
   // Example encoder usage (adjust according to your encoder's specific library/method)
-  // float angle = encoder.getAngle(); 
+  float angle = encoder.readAngle(); 
   // Serial.print("Encoder Angle: ");
   // Serial.println(angle);
 

@@ -1,11 +1,11 @@
 #include "Encoder.h"
-#include "Arduino.h"
 #include "SPI.h"
+#include "Arduino.h"
 
 static bool initialize(false);
 
   //Constructor for Encoder Class
-Encoder::Encoder(unsigned int pin, unsigned int ClockSpeed) {
+Encoder::Encoder(unsigned int pin, unsigned int ClockSpeed) : _pin(pin), _useSPI(false) {
     //Set the pinMode for the chip select pin on the arduino for the encoder to be an output then default it to being high because the chip is active low.
   pinMode(pin, OUTPUT);
   digitalWrite(pin, HIGH);
@@ -14,6 +14,15 @@ Encoder::Encoder(unsigned int pin, unsigned int ClockSpeed) {
   _pin = pin;
   _ClockSpeed = ClockSpeed;
 }
+
+Encoder::Encoder(int csPin, bool useSPI) : _pin(csPin), _useSPI(useSPI) {
+    if(useSPI) {
+        pinMode(csPin, OUTPUT);
+        SPI.begin();
+    }
+}
+
+//or? both?
 
 //necassary initlization method, SPI.begin() has to be called before SPI can be used so this is necassary but i need a better way of insuring it actually gets called rather than this function.
 void Encoder::Initialize() {
@@ -36,7 +45,14 @@ void Encoder::UpdatePosi(uint16_t command){
 
 void Encoder::interpretResponse(uint16_t response){
   posi = static_cast<float>(response); // Convert the response to float and store it in posi
+  float Encoder::readAngle() {
+    if(_useSPI) {
+      // Implement SPI reading
+    } else {
+      // Implement PWM reading
+    }
   // Additional conversion or interpretation logic can be added here
+  }
 }
 //TO-DO: create another method to interpret the byte from UpdatePosi and 
 //Complete
