@@ -19,7 +19,7 @@ UltrasonicSensor sensor(ULTRASONIC_TRIGGER_PIN, ULTRASONIC_ECHO_PIN);
 MotorAndESC motorControl(MOTOR_PIN, 2000, 1000); // Assuming this class handles the ESC signal
 
 // Initialize PID Controller
-PID myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
+PIDController myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
 
 void setup() {
   Serial.begin(9600);
@@ -28,7 +28,8 @@ void setup() {
 
   // Initialize PID controller
   Setpoint = 20; // Example setpoint: aiming for a 20 cm distance from an obstacle
-  myPID.SetMode(AUTOMATIC); // Turn the PID on
+  PIDController myPID(Kp, Ki, Kd, Setpoint);
+  myPID.setTarget(AUTOMATIC); // Turn the PID on
 }
 
 void loop() {
@@ -37,7 +38,7 @@ void loop() {
   Serial.println(distance);
 
   Input = distance;
-  myPID.Compute(); // PID computation to adjust motor speed based on distance
+  myPID.calculate(Input); // PID computation to adjust motor speed based on distance
   
   // Use the PID Output to adjust motor speed
   motorControl.Motor(Output); // You'll need to map or scale Output to your motor's speed range if necessary
