@@ -5,10 +5,10 @@
 #include "Encoder.h" // Include your encoder library if needed
 
 // Define the pins
-const int MOTOR_PIN = 5; // Pin for the motor control
-const int ULTRASONIC_TRIGGER_PIN = 2; // Trigger Pin for HC-SR04
-const int ULTRASONIC_ECHO_PIN = 3; // Echo Pin for HC-SR04
-const int Encoder = 7; // Encoder Pin
+const int MOTOR_PIN = 7; // Pin for the motor control
+const int ULTRASONIC_TRIGGER_PIN = 3; // Trigger Pin for HC-SR04
+const int ULTRASONIC_ECHO_PIN = 4; // Echo Pin for HC-SR04
+const int Encoder = 2; // Encoder Pin
 
 // PID parameters (Tune these based on your system's response)
 double Setpoint, Input, Output;
