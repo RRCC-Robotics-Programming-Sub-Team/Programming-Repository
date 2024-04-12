@@ -1,5 +1,6 @@
 #include "UltrasonicSensor.h"
 #include "PIDController.h" // Ensure this library is installed for PID control
+//#include <PID_v1.h> // Ensure this library is installed for PID control
 #include "MotorAndESC.h"
 #include "Encoder.h" // Include your encoder library if needed
 
@@ -20,7 +21,7 @@ UltrasonicSensor sensor(ULTRASONIC_TRIGGER_PIN, ULTRASONIC_ECHO_PIN);
 MotorAndESC motorControl(MOTOR_PIN, 2000, 1000); // Assuming this class handles the ESC signal
 
 // Initialize PID Controller
-PIDController myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, DIRECT);
+PIDController myPID(&Input, &Output, &Setpoint, Kp, Ki, Kd, PIDController::DIRECT);
 
 void setup() {
   Serial.begin(9600);
@@ -30,7 +31,8 @@ void setup() {
   // Initialize PID controller
   Setpoint = 20; // Example setpoint: aiming for a 20 cm distance from an obstacle
   PIDController myPID(Kp, Ki, Kd, Setpoint);
-  myPID.setTarget(AUTOMATIC); // Turn the PID on
+  myPID.setMode(PIDController::AUTOMATIC); // Turn the PID on
+  myPID.setDirection(PIDController::DIRECT); // Optional if you want to change it dynamically
 }
 
 void loop() {
@@ -48,6 +50,11 @@ void loop() {
   float angle = encoder.readAngle(); 
   // Serial.print("Encoder Angle: ");
   // Serial.println(angle);
+
+  if (myPID.Compute()) {
+        // If PID computation was performed
+        motorControl.Motor(Output);  // Use the PID output to control the motor
+    }
 
   delay(100);
 }
