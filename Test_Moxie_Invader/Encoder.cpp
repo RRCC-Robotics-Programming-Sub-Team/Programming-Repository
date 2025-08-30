@@ -63,7 +63,7 @@ void Encoder::interpretResponse(uint16_t response){
 
    CREDITS
    Lead Programmers: Bradley T. Harz, Zacaryas Dana, Jacob Mejia
-   Team:             Ronald Chu
+   Editor:           Ronald Chu
 
    © 2025 RRCC Space Grant Robotics Team.
    License (code): Apache-2.0 — see LICENSE
