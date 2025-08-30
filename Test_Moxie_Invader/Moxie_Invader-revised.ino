@@ -67,3 +67,16 @@ void turnLeft() {
 void reverseAndDecideDirection() {
   // Logic for reversing and then deciding which way to turn after backing up
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RRCC Space Grant Robotics — Moxie-Invader (2023–24)
+
+   CREDITS
+   Lead Programmers: Bradley T. Harz, Zacaryas Dana, Jacob Mejia
+   Team:             Ronald Chu
+
+   © 2025 RRCC Space Grant Robotics Team.
+   License (code): Apache-2.0 — see LICENSE
+   License (docs/images in repo): CC BY 4.0 — see LICENSE-docs
+   ──────────────────────────────────────────────────────────────────────────── */

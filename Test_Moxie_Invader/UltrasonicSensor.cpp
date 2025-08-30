@@ -21,3 +21,16 @@ float UltrasonicSensor::getDistance() {
     distance= duration * 0.034 / 2; // Speed of sound wave divided by 2 (go and back)
     return distance;
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RRCC Space Grant Robotics — Moxie-Invader (2023–24)
+
+   CREDITS
+   Lead Programmers: Bradley T. Harz, Zacaryas Dana, Jacob Mejia
+   Team:             Ronald Chu
+
+   © 2025 RRCC Space Grant Robotics Team.
+   License (code): Apache-2.0 — see LICENSE
+   License (docs/images in repo): CC BY 4.0 — see LICENSE-docs
+   ──────────────────────────────────────────────────────────────────────────── */

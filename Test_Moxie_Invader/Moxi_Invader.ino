@@ -53,3 +53,16 @@ void loop() {
   // Other loop logic, as necessary. Adjust delay as needed for your control loop timing
   delay(1000); // Delay a second between measurements or control updates
 }
+
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RRCC Space Grant Robotics — Moxie-Invader (2023–24)
+
+   CREDITS
+   Lead Programmers: Bradley T. Harz, Zacaryas Dana, Jacob Mejia
+   Team:             Ronald Chu
+
+   © 2025 RRCC Space Grant Robotics Team.
+   License (code): Apache-2.0 — see LICENSE
+   License (docs/images in repo): CC BY 4.0 — see LICENSE-docs
+   ──────────────────────────────────────────────────────────────────────────── */
